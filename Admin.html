@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administración - Arrien2.cl</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <style>
+        .custom-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+
+        .custom-card h1,
+        .custom-card h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <h5>Arrien2.cl</h5>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Inicio.html">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Registro.html">Registro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Carro.html">Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Recibo.html">Recibos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Admin.html">Administración</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-5 pt-5">
+        
+      
+            <h1 class="mb-4">Administración de Productos</h1>
+             <div class="bg-success-subtle rounded-5 p-5">
+            <h3>Monto Total de Ventas: $10.000.000CLP</h3>
+            <div class="text-center mb-4">
+                <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#crearProductoModal">Crear Producto</button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>Cabaña en la Montaña</td>
+                            <td>Disfruta de vistas panorámicas y tranquilidad en esta hermosa cabaña en la montaña.</td>
+                            <td>$120.000CLP</td>
+                            <td>
+                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editarProductoModal" onclick="cargarDatosProducto('Cabaña en la Montaña', 'Disfruta de vistas panorámicas y tranquilidad en esta hermosa cabaña en la montaña.', 120000)">Editar</button>
+                                <button class="btn btn-danger">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cabaña Frente al Lago</td>
+                            <td>Relájate frente al lago con todas las comodidades necesarias para una estancia perfecta.</td>
+                            <td>$150.000CLP</td>
+                            <td>
+                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editarProductoModal" onclick="cargarDatosProducto('Cabaña Frente al Lago', 'Relájate frente al lago con todas las comodidades necesarias para una estancia perfecta.', 150000)">Editar</button>
+                                <button class="btn btn-danger">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cabaña en la Playa</td>
+                            <td>Disfruta de la playa y el mar desde esta acogedora cabaña con acceso directo a la arena.</td>
+                            <td>$180.000CLP</td>
+                            <td>
+                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editarProductoModal" onclick="cargarDatosProducto('Cabaña en la Playa', 'Disfruta de la playa y el mar desde esta acogedora cabaña con acceso directo a la arena.', 180000)">Editar</button>
+                                <button class="btn btn-danger">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cabaña en el Bosque</td>
+                            <td>Escapa a un entorno natural con esta cabaña rodeada de bosque y tranquilidad.</td>
+                            <td>$140.000CLP</td>
+                            <td>
+                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editarProductoModal" onclick="cargarDatosProducto('Cabaña en el Bosque', 'Escapa a un entorno natural con esta cabaña rodeada de bosque y tranquilidad.', 140000)">Editar</button>
+                                <button class="btn btn-danger">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+       
+        <div class="modal fade" id="crearProductoModal" tabindex="-1" aria-labelledby="crearProductoModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="crearProductoModalLabel">Crear Nuevo Producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="/crear-producto" enctype="multipart/form-data">
+                            <div class="form-group mb-3">
+                                <label for="nombre">Nombre del producto:</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="descripcion">Descripción:</label>
+                                <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="precio">Precio:</label>
+                                <input type="number" class="form-control" id="precio" name="precio" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="imagen">Imagen:</label>
+                                <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Crear producto</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="modal fade" id="editarProductoModal" tabindex="-1" aria-labelledby="editarProductoModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editarProductoModalLabel">Editar Producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="/editar-producto" enctype="multipart/form-data">
+                            <div class="form-group mb-3">
+                                <label for="editNombre">Nombre del producto:</label>
+                                <input type="text" class="form-control" id="editNombre" name="nombre" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="editDescripcion">Descripción:</label>
+                                <textarea class="form-control" id="editDescripcion" name="descripcion" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="editPrecio">Precio:</label>
+                                <input type="number" class="form-control" id="editPrecio" name="precio" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="editImagen">Imagen:</label>
+                                <input type="file" class="form-control" id="editImagen" name="imagen" accept="image/*" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function cargarDatosProducto(nombre, descripcion, precio) {
+            document.getElementById('editNombre').value = nombre;
+            document.getElementById('editDescripcion').value = descripcion;
+            document.getElementById('editPrecio').value = precio;
+        }
+    </script>
+</body>
+
+</html>
